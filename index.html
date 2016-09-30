@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>在线接口测试工具 </title>
+    <meta name="keywords" content="接口测试" />
+    <meta name="description" content="接口测试" />
+    <link rel="shortcut icon" href="favorite.ico">
+    <link rel="stylesheet" rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/http.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.dialogbox.css"/>
+    <link rel="stylesheet" href="css/jsoneditor.css" />
+</head>
+
+<body>
+<div class="top navbar-inverse">
+    <div class="container">
+        <nav class="collapse navbar-collapse bs-navbar-collapse" rol="navigation">
+            <ul class="nav navbar-nav navbar-right manuscript">
+
+            </ul>
+        </nav>
+    </div>
+</div>
+<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand"><img src="img/logo.png" alt="logo.png" /></a>
+        </div>
+        <nav class="collapse navbar-collapse " role="navigation">
+            <form class="navbar-form navbar-right" role="search" name="search" method="post" action="">
+                <div class="form-group">
+                    <input type="text" name="q" class="form-control js-input-search" placeholder="请输入查询内容" value="">
+                    <button type="submit" class=""></button>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="nvabar-item-index"><a href="http://xxg3053.eicp.net/p/API-Test/">首页</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container wrap page-idx" id="page_idx">
+    <div class="row">
+        <div class="pull-left wrap-left">
+
+            <div class="clearfix shadow-box mod-info-flow">
+
+                <div class="main-http">
+                    <div id="params_start" class="table">
+                        <div class="pull-left row_h">
+                            <select id="api_method" class="select form-control">
+                                <option value="GET" selected="">GET</option>
+                                <option value="POST">POST</option>
+                                <option value="PUT">PUT</option>
+                                <option value="PATCH">PATCH</option>
+                                <option value="DELETE">DELETE</option>
+                                <option value="COPY">COPY</option>
+                                <option value="HEAD">HEAD</option>
+                                <option value="OPTIONS">OPTIONS</option>
+                                <option value="LINK">LINK</option>
+                                <option value="UNLINK">UNLINK</option>
+                                <option value="PURGE">PURGE</option>
+                            </select>
+                        </div>
+                        <div class="pull-left row_url">
+                            <input type="text" class="input-text form-control" id="http_url_input" title="HTTP接口URL" alt="HTTP接口URL" value="" placeholder="http://">
+                        </div>
+                        <button class="btn btn-success btn-left" id="http_test" type="button">发送请求</button>
+                    </div>
+                    <table id="params_table" class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th width="35%">Body参数名称</th>
+                            <th>Body参数值</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr id="params_end">
+                            <td colspan="2">
+                                <button class="btn btn-warning" id="add_url_parameter" type="button">添加参数</button>
+                                <button class="btn btn-primary" id="add_raw_url_parameter" type="button">批量添加</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table id="headers_table" class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th width="35%">Header名称</th>
+                            <th>Header值</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr id="headers_end">
+                            <td colspan="2">
+                                <button class="btn btn-warning" id="add_api_headers" type="button">添加Header</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table id="response_table" class="table table-bordered">
+                        <div id="jsoneditor"></div>
+                        <thead>
+                            <tr>
+                                <th width="35%">Response</th>
+                                <th>Response Body</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td valign="top" id="response_header"></td>
+                                <td valign="top">
+                                    <textarea id="output"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="bs-docs-footer" role="contentinfo">
+    <div class="footer-nav">
+        <div class="container">
+            <ul class="about-ul list-inline clearfix">
+               <!--  <li id="nvabar-item-index"><a href="#">首页</a></li>
+                <li id="navbar-category-1"><a href="">经验</a></li>
+                <li id="navbar-category-2"><a href="">Linux</a></li> -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="container copy-right">
+        <span>Copyright © kenfo<a href="#" target="_blank">test</a></span>
+
+    </div>
+</footer>
+<script src="js/common.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.dialogbox.js" ></script>
+<script type="text/javascript" src="js/jsoneditor.js" ></script>
+<script type="text/javascript" src="js/http.js" ></script>
+<script type="text/javascript" src="js/jquery.cookie.min.js" ></script>
+</body>
+
+</html>
