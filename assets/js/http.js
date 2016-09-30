@@ -70,8 +70,12 @@ $("#http_test").click(function() {
 		return
 	}
 	$(this).text("正在请求...");
+	$(this).removeClass('btn-success').addClass('btn-danger').addClass('disabled');
 	$("#output").val("");
-	$.post("apiTest.php", {
+
+	SetCookie('API-Test-urls', GetCookie('API-Test-urls')+','+http_url);
+
+	$.post("service/apiTest.php", {
 		url: http_url,
 		params: params,
 		method: method,
@@ -96,6 +100,7 @@ $("#http_test").click(function() {
 				editor.set(json);
 			}
 			$("#http_test").text("发送请求");
+			$("#http_test").removeClass('btn-danger').addClass('btn-success').removeClass('disabled');
 			$("#response_header").html("执行时间：" + data.time);
 			$("#response_header").append("<pre></pre>");
 			$("#response_header pre").text(data.header)
@@ -209,5 +214,6 @@ function add_header(cnt, name, value) {
 }
 
 
+//#urlHistorySelect
 
 
